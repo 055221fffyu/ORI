@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  /* 這裡必須是 var(--primary-color) 才能連動 JS */
+  --color-primary: var(--primary-color, #f97316); 
+}
+
+:root {
+  --primary-color: #f97316; /* 初始值 */
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
