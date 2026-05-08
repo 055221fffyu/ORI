@@ -1,4 +1,4 @@
-# Watermark Project - 前後端整合
+# ORI Project - 前後端整合
 
 ## 專案結構
 - `watermark-frontend/` : 前端程式碼 (React, Tailwind CSS, Vite)
