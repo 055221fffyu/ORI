@@ -3,7 +3,7 @@ from datetime import datetime
 
 from sqlalchemy import (
     Boolean, DateTime, Enum, ForeignKey, Integer,
-    String, Text, func,
+    String, Text, func, JSON
 )
 # from sqlalchemy.dialects.mysql import CHAR, JSON
 from sqlalchemy.orm import Mapped, mapped_column, relationship
