@@ -41,7 +41,7 @@ def upgrade() -> None:
     sa.Column('file_size', sa.Integer(), nullable=True),
     sa.Column('mime_type', sa.String(length=100), nullable=True),
     sa.Column('sha256', sa.String(length=64), nullable=True),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text(sa.text('CURRENT_TIMESTAMP')), nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('id')
     )
@@ -57,8 +57,8 @@ def upgrade() -> None:
     sa.Column('stegastamp_image_url', sa.String(length=1024), nullable=True),
     sa.Column('residual_image_url', sa.String(length=1024), nullable=True),
     sa.Column('error_message', sa.Text(), nullable=True),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text(sa.text('CURRENT_TIMESTAMP')), nullable=False),
-    sa.Column('updated_at', sa.DateTime(), server_default=sa.text(sa.text('CURRENT_TIMESTAMP')), nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
+    sa.Column('updated_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
     sa.ForeignKeyConstraint(['source_image_id'], ['images.id'], ondelete='RESTRICT'),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('id')
@@ -74,7 +74,7 @@ def upgrade() -> None:
     sa.Column('mask_url', sa.String(length=1024), nullable=True),
     sa.Column('summary', mysql.JSON(), nullable=True),
     sa.Column('overall_pass', sa.Boolean(), nullable=True),
-    sa.Column('created_at', sa.DateTime(), server_default=sa.text(sa.text('CURRENT_TIMESTAMP')), nullable=False),
+    sa.Column('created_at', sa.DateTime(), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
     sa.ForeignKeyConstraint(['embed_task_id'], ['embed_tasks.id'], ondelete='SET NULL'),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ondelete='CASCADE'),
     sa.PrimaryKeyConstraint('id')
