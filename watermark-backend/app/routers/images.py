@@ -63,7 +63,7 @@ async def upload(
         new_image = Image(
             user_id=current_user.id,
             original_filename=safe_filename,
-            blob_url=blob_result["url"],
+            blob_url=blob_result["url"].replace("http://127.0.0.1:8000", ""),
             blob_pathname=blob_result["pathname"],
             file_size=len(data),
             mime_type=file.content_type,

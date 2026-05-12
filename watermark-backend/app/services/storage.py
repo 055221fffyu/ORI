@@ -71,7 +71,8 @@ async def upload_image(data: bytes, filename: str, content_type: str, folder: st
     
     # 4. 回傳本地 URL (讓前端能看到圖)
     return {
-        "url": f"http://127.0.0.1:8000/static/{folder}/{unique_name}",
+        #"url": f"http://127.0.0.1:8000/static/{folder}/{unique_name}",
+        "url": f"/static/{folder}/{unique_name}",
         "pathname": f"{folder}/{unique_name}"
     }
 
