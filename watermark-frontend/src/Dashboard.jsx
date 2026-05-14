@@ -155,7 +155,11 @@ export default function Dashboard() {
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
                         {images.map(img => (
                             <div key={img.id} className="group relative aspect-square bg-gray-50 dark:bg-gray-700 rounded-2xl overflow-hidden border dark:border-gray-600">
-                                <img src={img.blob_url} alt="upload" className="w-full h-full object-cover" />
+                                <img 
+                                    src={img.blob_url.startsWith('http') ? img.blob_url : `${api.defaults.baseURL}${img.blob_url}`} 
+                                    alt="upload" 
+                                    className="w-full h-full object-cover" 
+                                />
                                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                                     <button onClick={() => startEmbed(img.id)} className="bg-white text-gray-900 px-4 py-2 rounded-lg font-bold text-sm transform active:scale-95 transition">
                                         嵌入浮水印
